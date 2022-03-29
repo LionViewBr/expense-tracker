@@ -3,13 +3,12 @@ import { useState, useEffect } from 'react';
 import { TableArea } from './components/TableArea';
 import {Item} from './types/Item';
 import { categories } from './data/categories';
-import { items } from './data/items';
 import { InfoArea } from './components/InfoArea';
 import { AddItemComponent } from './components/AddItemCompoent';
 import { getCurrentMonth,filterListByMonth } from './helpers/dateFilter';
 
 const App = () => {
-  const [list,setList] = useState(items);
+  const [list,setList] = useState<Item[]>([]);
   const [filteredList,setFilteredList] = useState<Item[]>([]);
   const [currentMonth,setCurrentMonth] = useState(getCurrentMonth());
   const [income,setIncome] = useState(0);
